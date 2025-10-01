@@ -1,11 +1,11 @@
 const express = require("express");
 const mongoose=require("mongoose");
-const studentRoute=require("./studentRoute");
+const studentRoute=require("./Routes/studentRoutes");
 const app = express();
 const PORT = 80;
 app.use(express.json());
 mongoose.connect(
-    "mongodb+srv:/",
+    "mongodb+srv://shyamshilu:shyam0976@cluster1.icbajkg.mongodb.net/?retryWrites=true&w=majority&appName=cluster1",
     {
         useNewUrlParser:true,
         useUnifiedTopology:true,
@@ -14,5 +14,4 @@ mongoose.connect(
 app.use("/song",studentRoute);
 app.listen(PORT,()=>{
     console.log("server is running :127.0.0.1"+PORT);
-
 });
