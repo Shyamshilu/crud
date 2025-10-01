@@ -1,13 +1,13 @@
 const Joi= require("joi");
 exports.createValidator=Joi.object({
-    title:Joi.string().min(3).max(30).require(),
+    title:Joi.string().min(3).max(30).required(),
     artist:Joi.string().min(3).max(50).required(),
     category:Joi.string().min(3).max(50).required(),
     album:Joi.string().min(3).max(50).required(),
     url:Joi.string().required(),
     photo:Joi.string().required(),
     year:Joi.number().min(1900).max(new
-        Date().getFullYear()).require(),
+        Date().getFullYear()).required(),
 });
 exports.updateValidator=Joi.object({
     title:Joi.string().min(3).max(30).optional(),
