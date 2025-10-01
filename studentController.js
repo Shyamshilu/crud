@@ -1,5 +1,5 @@
 const { error } = require("console");
-const Song=require("../models/Song");
+const Song=require("../models/Songs");
 exports.index=(req,res)=>{
     Song.find()
     .then((allSongs)=>{
@@ -26,8 +26,6 @@ exports.store=(req,res)=>{
         title:req.body.title,
         artist:req.body.artist,
         category:req.body.category,
-        album:req.body.category,
-        album:req.body.album,
         url:req.body.url,
         photo:req.body.photo,
         year: req.body.year,
@@ -42,7 +40,7 @@ exports.store=(req,res)=>{
     });
     res.send({message:"Data stored successfully",data:newSong});
 };
-    res.send({message:"Song updated successfully",data:updatedSong});
+    
 exports.update=(req,res)=>{
     Song.findByIdAndUpdate(req.params.id,req.body,{new:true})
     .then((updatedSong)=>{
