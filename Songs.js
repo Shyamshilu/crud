@@ -9,5 +9,6 @@ const songSchema=new mongoose.Schema({
     year:Number,
 });
 
-const Song = mongoose.model("Song",songSchema);
+const Song = mongoose.model("Songs",songSchema);
 module.exports=Song;
+
