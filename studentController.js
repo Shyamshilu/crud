@@ -1,5 +1,5 @@
 const { error } = require("console");
-const Song=require("../models/Songs");
+const Song=require("./Songs");
 exports.index=(req,res)=>{
     Song.find()
     .then((allSongs)=>{
@@ -61,3 +61,4 @@ exports.delete=(req,res)=>{
     console.error("error deleting song:",error);
     });
 };
+
