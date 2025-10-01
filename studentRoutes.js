@@ -1,7 +1,7 @@
 const express =require("express");
 const Router=express.Router();
 const studentController=
-require("../controller/studentController");
+require("./studentController");
 const{
     createValidator,
     updateValidator,
@@ -19,3 +19,4 @@ Router.post("/store",(req,res,next)=>{
 Router.put("/update/:id",studentController.update);
 Router.delete("/delete/:id",studentController.delete);
 module.exports=Router;
+
