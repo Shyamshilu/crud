@@ -1,12 +1,12 @@
 const express =require("express");
 const Router=express.Router();
 const studentController=
-require("./studentController");
+require("../controller/studentController");
 const{
     createValidator,
     updateValidator,
     validate,
-}=require("../validators/studentValidator");
+}=require("../validator/studentValidator");
 Router.get("/index",studentController.index);
 Router.get("/show/:id",studentController.show);
 Router.post("/store",(req,res,next)=>{
@@ -19,4 +19,3 @@ Router.post("/store",(req,res,next)=>{
 Router.put("/update/:id",studentController.update);
 Router.delete("/delete/:id",studentController.delete);
 module.exports=Router;
-
