@@ -6,13 +6,11 @@ const PORT = 80;
 app.use(express.json());
 mongoose.connect(
     "mongodb+srv://shyamshilu:shyam0976@cluster1.icbajkg.mongodb.net/?retryWrites=true&w=majority&appName=cluster1",
-    {
-        useNewUrlParser:true,
-        useUnifiedTopology:true,
-    }
+  
 );
 app.use("/song",studentRoute);
 app.listen(PORT,()=>{
     console.log("server is running :127.0.0.1"+PORT);
 });
+
 
