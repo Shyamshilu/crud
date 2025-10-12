@@ -1,20 +1,13 @@
-const express = require("express");
-const mongoose = require("mongoose");
+const sequelize=require("sequelize");
+const express=require("express");
+const studentroute=require("./route/studentroute");
 
-const studentRoute = require("./studentroute");
-const app = express();
-const PORT = 80;
+const app=express();
+const port=3000;
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://shyamshilu:123@cluster1.icbajkg.mongodb.net/",
-{
-  useNewUrlParser:true,
-  useUnifiedTopology:true,
-});
+app.use("/student",studentroute);
 
-app.use("/song", studentRoute);
-
-app.listen(PORT, () => {
-  console.log("server is running : 127.0.0.1" + PORT);
+app.listen(port,()=>{
+    console.log(`server is running at 127.0.0.1:`+port);
 });
